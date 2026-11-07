@@ -1,0 +1,6 @@
+﻿table ip mwan3fix {
+	chain out {
+		type route hook output priority 149; policy accept;
+		icmp type echo-request ip daddr 223.5.5.5 counter meta mark set 0x00003f00
+	}
+}
