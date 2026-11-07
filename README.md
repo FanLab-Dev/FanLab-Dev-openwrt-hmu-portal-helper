@@ -47,6 +47,24 @@
 | 4 | 配 mwan3 均衡 | `mwan3 status` 显示两条各 50% | [阶段四](#7-阶段四配置聚合mwan3) |
 | 5 | 装 `auth-manager.sh` + cron | 拔掉一条线，网不断 | [阶段五](#8-阶段五自动认证导流) |
 
+### 不想自己动手？把仓库丢给 AI
+
+把仓库地址 + 下面这段要求一起发给能执行命令的 AI Agent（DeepSeek Harness、Claude Code、Cursor 这类带终端的都行），它会按本项目的阶段流程先侦察、再动手：
+
+![在 AI 助手的输入框里粘贴仓库地址和提示词](quickstart-prompt.png)
+
+```text
+https://github.com/FanLab-Dev/FanLab-Dev-openwrt-hmu-portal-helper
+
+请你按照这个项目的思路来配置我的路由器：
+1. 先只读侦察，输出现状报告（认证类型 / 门户地址 / 两个墙口是否可用），我确认后再进入下一步
+2. 任何会断网的操作前，先执行 sysupgrade -b 备份
+3. 每一步都要给出命令和真实输出，不要用「应该」「大概」下结论
+4. 要重启、改 MAC、动防火墙默认策略时，先停下来问我
+```
+
+> 完整的 Agent 操作手册见 [`AGENT.md`](AGENT.md)；不想用 AI 就按上面五步自己敲，结果一样。
+
 ### 适用性自测
 
 | 问题 | 是 | 否 |
